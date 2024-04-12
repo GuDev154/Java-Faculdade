@@ -1,5 +1,5 @@
 //BUSCA BINARIA
-
+package Exercicios;
 public class ex003 {
     public static int buscaBinaria(int[] array, int x) {
         int esquerda = 0;

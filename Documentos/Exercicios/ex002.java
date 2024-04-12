@@ -1,5 +1,5 @@
 //BUSCA LINEAR
-
+package Exercicios;
 public class ex002 {
     public static int buscaLinear(int[] array, int x) {
         for (int i = 0; i < array.length; i++) {

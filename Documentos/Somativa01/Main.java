@@ -1,30 +1,20 @@
 package Somativa01;
-import java.util.LinkedList;
-import java.util.HashMap;
-import java.util.Map;
-
-class Livro{
-
-    String titulo;
-    String autor;
-    int anoPublicacao;
-
-    public Livro (String newTitulo, String newAutor, int newAnoPublicacao){
-        this.titulo = newTitulo;
-        this.autor = newAutor;
-        this.anoPublicacao = newAnoPublicacao;
-    }
-
-
-    @Override
-    public String toString(){
-        return titulo + ", " + autor + ", " + anoPublicacao+".";
-    }
-
-}
 
 public class Main {
     public static void main(String[] args) {
-    LinkedList<Livro> livrosBiblioteca = new LinkedList<>();
+        Grafo grafo = new Grafo();
+
+        // Adicionando conexões ao grafo
+        grafo.adicionarConexao("A", "B");
+        grafo.adicionarConexao("A", "C");
+        grafo.adicionarConexao("B", "C");
+        grafo.adicionarConexao("B", "D");
+        grafo.adicionarConexao("C", "D");
+        grafo.adicionarConexao("D", "E");
+        grafo.adicionarConexao("E", "F");
+        grafo.adicionarConexao("F", "A");
+
+        // Imprimindo o grafo
+        grafo.imprimirGrafo();
     }
 }
