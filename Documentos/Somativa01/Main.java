@@ -13,6 +13,7 @@ public class Main {
         grafo.adicionarConexao("D", "E");
         grafo.adicionarConexao("E", "F");
         grafo.adicionarConexao("F", "A");
+        grafo.adicionarConexao("F", "B");
 
         // Imprimindo o grafo
         grafo.imprimirGrafo();

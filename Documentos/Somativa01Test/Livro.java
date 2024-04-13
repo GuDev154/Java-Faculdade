@@ -11,9 +11,13 @@ public class Livro {
         this.anoPublicacao = novoAnoPublicacao;
     }
 
+    public String getTitulo(){
+        return titulo;
+    }
+
     @Override
     public String toString(){
-        return titulo + ", " + autor + ", " + anoPublicacao+".";
+        return titulo + ", " + autor + ", " + anoPublicacao+"";
     }
 
 

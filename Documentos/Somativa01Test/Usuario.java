@@ -40,4 +40,6 @@ public class Usuario {
             System.out.println(livro.toString());
         }
     }
+
+    //Metodo de emprestimo de livro(Este metodo (Adiciona o livro emprestado) vai retornar para o metodo de busca (O proximo livro) e ele vai sugerir o livro para o usuario)
 }
