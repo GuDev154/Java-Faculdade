@@ -9,8 +9,7 @@ public class Usuario {
     Queue<Livro> filaDeEspera;
 
 
-    public Usuario(String newUsuario){
-        this.nomeUsuario = newUsuario;
+    public Usuario(){
         historicoDeNavegacao = new Stack<>();
         filaDeEspera = new LinkedList<>();
     }
@@ -19,6 +18,11 @@ public class Usuario {
 
     public void adicionarAoHistorico(Livro Livro){
         historicoDeNavegacao.push(Livro);
+    }
+
+    //Metodo retorna os livros do historico para o metodo de busca de sugestão
+    public Stack<Livro> retornaHistorico(){
+        return historicoDeNavegacao;
     }
 
     public void imprimirHistorico(){
@@ -41,5 +45,9 @@ public class Usuario {
         }
     }
 
+    //Metodo de Emprestar Livro
+    public void emprestarLivro(Livro livro){
+        historicoDeNavegacao.add(livro);
+    }
     //Metodo de emprestimo de livro(Este metodo (Adiciona o livro emprestado) vai retornar para o metodo de busca (O proximo livro) e ele vai sugerir o livro para o usuario)
 }

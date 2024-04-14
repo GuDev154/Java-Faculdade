@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
 //Metodos de adicionar livro no grafo
 //Metodos de Busca de Livro no Grafo
@@ -35,16 +36,20 @@ public class GrafroBiblioteca{
             System.out.println();
         }
     }
-    //Metodo de Busca de conexões com base no livro anterior
-    public void buscarLivroEConexoes(Livro livro) {
-        if (adjacencias.containsKey(livro)) {
-            System.out.println("Conexões do livro " + livro + ":");
-            Set<Livro> conexoes = adjacencias.get(livro);
-            for (Livro conexao : conexoes) {
-                System.out.println(conexao);
+
+    //Metodo de Sugestão de livros
+    public void buscarLivroEconexoes(Stack<Livro> livros) {
+        for (Livro livro : livros) {
+            if (adjacencias.containsKey(livro)) {
+                System.out.println("Conexões do livro " + livro.getTitulo() + ":");
+                Set<Livro> conexoes = adjacencias.get(livro);
+                for (Livro conexao : conexoes) {
+                    System.out.println(conexao);
+                }
+            } else {
+                System.out.println("Livro " + livro.getTitulo() + " não encontrado no grafo.");
             }
-        } else {
-            System.out.println("Livro não encontrado no grafo.");
         }
     }
+
 }
