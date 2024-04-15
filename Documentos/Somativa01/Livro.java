@@ -1,4 +1,4 @@
-package Somativa01Test;
+package Somativa01;
 
 public class Livro {
     String titulo;

@@ -1,4 +1,4 @@
-package Somativa01Test;
+package Somativa01;
 import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
@@ -9,7 +9,8 @@ public class Usuario {
     Queue<Livro> filaDeEspera;
 
 
-    public Usuario(){
+    public Usuario(String nomeUsuario){
+        this.nomeUsuario = nomeUsuario;
         historicoDeNavegacao = new Stack<>();
         filaDeEspera = new LinkedList<>();
     }
@@ -25,6 +26,7 @@ public class Usuario {
         return historicoDeNavegacao;
     }
 
+    //Imprime o historico na tela
     public void imprimirHistorico(){
         System.out.println("Este é o seu Historico de Navegação:");
         for (Livro livro : historicoDeNavegacao){
@@ -33,7 +35,6 @@ public class Usuario {
     }
 
     //Metodos da Fila de Espera
-
     public void adicionarFilaDeEspera(Livro Livro){
         filaDeEspera.add(Livro);
     }
@@ -43,11 +44,19 @@ public class Usuario {
         for (Livro livro : filaDeEspera){
             System.out.println(livro.toString());
         }
+        System.out.println("");
     }
 
     //Metodo de Emprestar Livro
     public void emprestarLivro(Livro livro){
+        System.out.println(nomeUsuario+" emprestou o livro: "+ livro +".");
+        System.out.println("");
         historicoDeNavegacao.add(livro);
     }
-    //Metodo de emprestimo de livro(Este metodo (Adiciona o livro emprestado) vai retornar para o metodo de busca (O proximo livro) e ele vai sugerir o livro para o usuario)
+
+    //Metodo de Busca de livros utilizando o metodo de busca da classe grafobiblioteca com base no historico de livros
+    public void sugerirLivros(GrafroBiblioteca grafo) {
+        Stack<Livro> historico = retornaHistorico();
+        grafo.buscarLivroEconexoes(historico);
+    }
 }

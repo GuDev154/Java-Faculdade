@@ -1,4 +1,4 @@
-package Somativa01Test;
+package Somativa01;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -25,23 +25,27 @@ public class GrafroBiblioteca{
 
     // Metodo para imprimir as conexões do grafo
     public void imprimirGrafo() {
-        System.out.println("Livros e Suas Coleções(Conexões):");
+        System.out.println("Coleções de Livros da Biblioteca:");
         for (Map.Entry<Livro, Set<Livro>> entry : adjacencias.entrySet()) {
             Livro livro = entry.getKey();
             Set<Livro> conexoes = entry.getValue();
             System.out.print(livro.getTitulo() + ": ");
+            if (conexoes.isEmpty()) {
+                System.out.print("Este livro não tem outras conexões!");
+            }
             for (Livro conexao : conexoes) {
                 System.out.print(conexao.getTitulo() + ". ");
             }
-            System.out.println();
+            System.out.println("");
         }
+        System.out.println("");
     }
 
     //Metodo de Sugestão de livros
     public void buscarLivroEconexoes(Stack<Livro> livros) {
         for (Livro livro : livros) {
             if (adjacencias.containsKey(livro)) {
-                System.out.println("Conexões do livro " + livro.getTitulo() + ":");
+                System.out.println("Sugestões de leitura com base no livro " + livro.getTitulo() + ":");
                 Set<Livro> conexoes = adjacencias.get(livro);
                 for (Livro conexao : conexoes) {
                     System.out.println(conexao);
