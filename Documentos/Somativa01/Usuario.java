@@ -16,7 +16,6 @@ public class Usuario {
     }
 
     //Metodos de Historico de navegação
-
     public void adicionarAoHistorico(Livro Livro){
         historicoDeNavegacao.push(Livro);
     }
