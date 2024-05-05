@@ -54,12 +54,12 @@ public class Main {
         jorge.adicionarFilaDeEspera(livro8);
         jorge.imprimirFilaDeEspera();
 
-        //Empresta o livro
+        //Emprestando os livros
         jorge.emprestarLivro(livro1);
         jorge.emprestarLivro(livro4);
         jorge.emprestarLivro(livro8);
 
-        //Buscando o melhor caminho
+        //Buscando o melhor caminho usando Djikstra
         livrosGrafo.verificarDistancia(livro1);
         livrosGrafo.verificarDistancia(livro4);
         livrosGrafo.verificarDistancia(livro8);

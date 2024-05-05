@@ -64,7 +64,7 @@ public class GrafroBiblioteca{
         }
     }
 
-    //Metodo para mostra as distancias entre cada livro
+    //Metodo para mostrar as distancias entre cada livro
     public void imprimirDistancias(Map<Livro, Integer> distancias, Livro origem) {
         System.out.println("Distâncias a partir do livro de origem "+origem.getTitulo()+":");
 
